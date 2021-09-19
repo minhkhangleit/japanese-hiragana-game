@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Learning Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="bg-info">
+    <div class="game-title text-center pt-3">Japanese Learning Game</div>
+    <div class="text-center py-3">
+        <button type="button" class="btn btn-warning start-game">Start game</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="game-zone bg-light border rounded shadow" id="game-zone">
+                    <div class="bubble-zone" id="bubble-zone">
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <form action="/" id="form-input">
+                                <div class="form-group">
+                                    <div class="answer text-center"><label>Enter word</label></div>
+                                    <input type="text" class="form-control" name='input' id="input-data">
+                                  </div>
+                            </form>
+                        </div>
+                        <div class="col-2">
+                            <div class="arrow-image" id="arrow-shoot">
+                                <img src="./arrow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="rule-zone bg-light border rounded shadow">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="game-value" id="score">Score: 0</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="game-value" id="arrow">Arrow: 0</div>
+                        </div>
+                        <div class="col-4">
+                            <div class="game-value" id="level">Level: 0</div>
+                        </div>
+                    </div>
+                    <div class="title-hiragana text-center"><h5 class="text-info">Hiragana</h5></div>
+                    <div class="row">
+                        <div class="col-2 text-center"> <div class="text-info">あ</div><span>a</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">い</div><span>i</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">う</div><span>u</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">え</div><span>e</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">お</div><span>o</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">か</div><span>ka</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">き</div><span>ki</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">く</div><span>ku</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">け</div><span>ke</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">こ</div><span>ko</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">さ</div><span>sa</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">し</div><span>shi</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">す</div><span>su</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">せ</div><span>se</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">そ</div><span>so</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">た</div><span>ta</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ち</div><span>chi</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">つ</div><span>tsu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">て</div><span>te</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">と</div><span>to</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">な</div><span>na</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">に</div><span>ni</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぬ</div><span>nu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ね</div><span>ne</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">の</div><span>no</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">は</div><span>ha</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ひ</div><span>hi</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ふ</div><span>fu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">へ</div><span>he</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ほ</div><span>ho</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ま</div><span>ma</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">み</div><span>mi</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">む</div><span>mu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">め</div><span>me</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">も</div><span>mo</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">や</div><span>ya</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ゆ</div><span>yu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">よ</div><span>yo</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ら</div><span>ra</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">り</div><span>ri</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">る</div><span>ru</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">れ</div><span>re</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ろ</div><span>ro</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">わ</div><span>wa</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">を</div><span>wo</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ん</div><span>n</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">が</div><span>ga</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぎ</div><span>gi</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぐ</div><span>gu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">げ</div><span>ge</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ご</div><span>go</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ざ</div><span>za</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">じ</div><span>ji</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ず</div><span>zu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぜ</div><span>ze</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぞ</div><span>zo</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">だ</div><span>da</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぢ</div><span>ji</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">づ</div><span>zu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">で</div><span>de</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ど</div><span>do</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ば</div><span>ba</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">び</div><span>bi</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぶ</div><span>bu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">べ</div><span>be</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぼ</div><span>bo</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぱ</div><span>pa</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぴ</div><span>pi</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぷ</div><span>pu</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぺ</div><span>pe</span></div>
+                        <div class="col-2 text-center"> <div class="text-info">ぽ</div><span>po</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">きゃ</div><span>kya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">きゅ</div><span>kyu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">きょ</div><span>kyo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぎゃ</div><span>gya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぎゅ</div><span>gyu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぎょ</div><span>gyo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">しゃ</div><span>sha</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">しゅ</div><span>shu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">しょ</div><span>sho</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">じゃ</div><span>ja</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">じゅ</div><span>ju</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">じょ</div><span>jo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ちゃ</div><span>cha</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ちゅ</div><span>chu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ちょ</div><span>cho</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぢゃ</div><span>ja</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぢゅ</div><span>ju</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぢょ</div><span>jo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">にゃ</div><span>nya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">にゅ</div><span>nyu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">にょ</div><span>nyo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ひゃ</div><span>hya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ひゅ</div><span>hyu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ひょ</div><span>hyo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">びゃ</div><span>bya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">びゅ</div><span>byu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">びょ</div><span>byo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぴゃ</div><span>pya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぴゅ</div><span>pyu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">ぴょ</div><span>pyo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">みゃ</div><span>mya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">みゅ</div><span>myu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">みょ</div><span>myo</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">りゃ</div><span>rya</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">りゅ</div><span>ryu</span></div>
+                        <div class="col-3 text-center"> <div class="text-info">りょ</div><span>ryo</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal-game-over">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h5 class="modal-title" id="exampleModalLabel">Game over</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-center">
+                    Congrats your score is <h5 class="text-info" id="game-over-score">100</h5>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-info start-game" data-dismiss="modal">Start new game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./setting.js"></script>
+    <script src="./wordJP.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.game-title {
+    font-size: 25px;
+}
+
+.game-container {
+    margin-left: auto;
+}
+
+.game-zone {
+    width: 100%;
+    height: 600px;
+    background-color: red;
+}
+
+.rule-zone {
+    width: 100%;
+    height: 600px;
+    background-color: blue;
+    padding: 15px 5px;
+    overflow-y: scroll;
+}
+
+.bubble-zone {
+    position: relative;
+    height: 500px;
+    border-bottom: 3px solid red;
+}
+
+.bubble {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    background-image: url(./bubble.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    border-radius: 30%;
+    overflow: hidden;
+}
+
+.bubble.boom {
+    background-image: url(./boomb.png);
+    color: white;
+    font-size: 18px;
+}
+
+.bubble.star {
+    background-image: url(./star.png);
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.arrow-image {
+    padding-top: 25px;
+    cursor: pointer;
+}
+
+#form-input {
+    padding-left: 20px;
+}
+
+.arrow-image img {
+    height: 50px;
+}
+
+.game-value {
+    padding-left: 15px;
+}
